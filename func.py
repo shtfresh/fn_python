@@ -11,26 +11,21 @@ def handler(ctx, data: io.BytesIO=None):
 
 
     try:
-        logging.info("----------------------xxxxxxxxxxxxxxxxxxx--------------")
-        #logging.info("data:"+data.getvalue())
         body = json.loads(data.getvalue())
-
-        # logging.info(type(body))
-        # for key, value in body.items():
-        #      logging.info(key+":"+value)
         data=body.get("data")
-        logging.info(type(data))
-        #  for key, value in data.items():
-        #       logging.info(key+":"+value)
 
+        #バックアップするblock volumeのIDを取得する
         resourceId = data.get("resourceId")
 
         logging.info("--------resourceId:"+resourceId+":--------------")
     except (Exception, ValueError) as ex:
         logging.info(str(ex))
 
+    #バックアップするblock volumeのID
     source_backup_id = resourceId
+    #バックアップターゲットリージョン
     destination_region = "eu-frankfurt-1"
+    #OCI configファイルの置く場所
     source_config = oci.config.from_file("/function/key/config","tao-oci-profile")
     destination_config = source_config.copy()
     destination_config["region"] = destination_region
