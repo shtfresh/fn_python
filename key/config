@@ -1,0 +1,6 @@
+[tao-oci-profile]
+user=ocid1.user.oc1..aaaaaaaakjdgbthgskjx34r6p6dmbrhz6efgoltpxeogqkpd26vdtsroen7q
+fingerprint=bf:0d:7e:8a:3e:2c:f9:b6:e9:4b:d7:a8:3d:9b:a1:00
+key_file=/function/key/private_key.pem
+tenancy=ocid1.tenancy.oc1..aaaaaaaagwmwhlofsz3rx4d3glfaqxlim4ryintboyuashvnw32e3uqx4wia
+region=ap-tokyo-1
